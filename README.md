@@ -15,6 +15,6 @@ To run the project add root folder of the project to python path.
     ```
 
 ## Acknowledgement
-**PointNet++ PyTorch Implementation**: [erikwijmans/Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch)
-**Official PyTorch**: [charlesq34/pointnet2](https://github.com/charlesq34/pointnet2)
-**PyTorch Chamfer Distance**: [chrdiller/pyTorchChamferDistance](https://github.com/chrdiller/pyTorchChamferDistance)
+- **PointNet++ PyTorch Implementation**: [erikwijmans/Pointnet2_PyTorch](https://github.com/erikwijmans/Pointnet2_PyTorch)
+- **Official PyTorch**: [charlesq34/pointnet2](https://github.com/charlesq34/pointnet2)
+- **PyTorch Chamfer Distance**: [chrdiller/pyTorchChamferDistance](https://github.com/chrdiller/pyTorchChamferDistance)

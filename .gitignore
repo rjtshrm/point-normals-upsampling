@@ -102,3 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# dataset file
+*.h5
+
+# checkoints
+checkpoint/

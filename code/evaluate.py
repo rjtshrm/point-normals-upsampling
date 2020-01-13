@@ -4,15 +4,8 @@ import torch
 import argparse
 import numpy as np
 from model import PointCloudNet
-from code.utils import fp_sampling, knn_patch 
+from code.utils import fp_sampling, knn_patch, helper_function 
 import os
-
-def get_best_epoch(f_pointer):
-    f_pointer.seek(0, 0) # begining of file
-    read_states = f_pointer.readlines()
-    read_min_loss = min(read_states, key=lambda k: float(k.split(", ")[1].split(" ")[1][0:-1]))
-    best_epoch = int(read_min_loss.split(", ")[0].split(" ")[1])
-    return best_epoch, read_min_loss
 
 
 parser = argparse.ArgumentParser()
@@ -54,7 +47,7 @@ patches[:, :, 0:3] = patches[:, :, 0:3] / torch.unsqueeze(furthest_distance, dim
 # read best epoch from trained model
 trained_model_state = open("{0}/state.txt".format(TRAINED_MODEL), "r")
 
-best_epoch, read_min_loss = get_best_epoch(trained_model_state)
+best_epoch, read_min_loss = helper_function.get_best_epoch(trained_model_state)
 print(best_epoch, read_min_loss)
 print("Best epoch (i.e., minimum  loss) for {0}".format(read_min_loss))
 
@@ -73,4 +66,4 @@ up_patches[:, :, 0:3] = up_patches[:, :, 0:3] * torch.unsqueeze(furthest_distanc
 up_points = torch.cat([p for p in up_patches], dim=0)
 fps_idx = fp_sampling.furthest_point_sample(torch.unsqueeze(up_points[:, 0:3], dim=0).contiguous(), pc.shape[0] * 4)
 up_points = up_points[torch.squeeze(fps_idx, dim=0).cpu().numpy(), :].detach().cpu().numpy()
-np.savetxt("temp/{0}".format(f_name), up_points, fmt='%.6f', delimiter=" ", newline="\n")
+np.savetxt("../results/{0}".format(f_name), up_points, fmt='%.6f', delimiter=" ", newline="\n")

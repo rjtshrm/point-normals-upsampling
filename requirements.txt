@@ -5,3 +5,4 @@ enum34
 future
 tqdm
 scipy
+sklearn

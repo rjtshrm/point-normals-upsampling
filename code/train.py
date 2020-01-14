@@ -115,7 +115,7 @@ for epoch in range(start_epoch, EPOCHS):
         predicted_outputs = net(inputs)
         dist1, dist2 = chamfer_dist(targets[:, :, 0:3], predicted_outputs[:, :, 0:3])
         n_loss = l2_normal_loss(targets, predicted_outputs, device)
-        cosine_normal_loss, normal_neighbor_loss, point_neighbor_loss = knn_loss(predicted_outputs, 5, 5, device)
+        cosine_normal_loss, normal_neighbor_loss, point_neighbor_loss = knn_loss(predicted_outputs, 15, 15, device)
         loss = (torch.mean(dist1)) + (torch.mean(dist2)) + (0.1 * point_neighbor_loss) + (0.05 * n_loss) + (0.0001 * cosine_normal_loss) + (0.0001 * normal_neighbor_loss)
 
         loss.backward()

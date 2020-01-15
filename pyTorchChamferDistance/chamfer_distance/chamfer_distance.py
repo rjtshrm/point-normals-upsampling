@@ -3,10 +3,9 @@ import torch
 
 from torch.utils.cpp_extension import load
 
-
 cd = load(name="cd",
-          sources=["/home/rajat/Desktop/code/point-cloud-upsampling/pyTorchChamferDistance/chamfer_distance/chamfer_distance.cpp",
-                   "/home/rajat/Desktop/code/point-cloud-upsampling/pyTorchChamferDistance/chamfer_distance/chamfer_distance.cu"])
+          sources=["/home/user/point-normals-upsampling/pyTorchChamferDistance/chamfer_distance/chamfer_distance.cpp",
+                   "/home/user/point-normals-upsampling/pyTorchChamferDistance/chamfer_distance/chamfer_distance.cu"])
 
 class ChamferDistanceFunction(torch.autograd.Function):
     @staticmethod

@@ -1,6 +1,6 @@
 # Efficient Point Cloud Upsampling and Normal Estimation using Deep Learning for Robust Surface Reconstruction
 
-To run the project add root folder of the project to python path.```export PYTHONPATH="ROOTPATH_OF_PROJECT:$PYTHONPATH"``` e.g., ```export PYTHONPATH="/home/tosc6817/Projects/point-normals-upsampling:$PYTHONPATH"```
+To run the project add root folder of the project to python path.```export PYTHONPATH="ROOTPATH_OF_PROJECT:$PYTHONPATH"``` e.g., ```export PYTHONPATH="/home/user/point-normals-upsampling:$PYTHONPATH"```
 
 ## Setup
 - Use anaconda for python3.7. Install ```requirements.txt```. Install torch and cuda toolkit ```conda install pytorch torchvision cudatoolkit=10.1 -c pytorch```

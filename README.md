@@ -10,7 +10,7 @@ To run the project add root folder of the project to python path.```export PYTHO
 
 ## Training
 
-- For this repo we used [PU-NET](https://raw.githubusercontent.com/yulequan/PU-Net) dataset for training. Download the hdf5 format patches dataset from [GoogleDrive](https://drive.google.com/file/d/1wMtNGvliK_pUTogfzMyrz57iDb_jSQR8/view?usp=sharing)
+- For this repo we used [PU-NET](https://github.com/yulequan/PU-Net) dataset for training. Download the hdf5 format patches dataset from [GoogleDrive](https://drive.google.com/file/d/1wMtNGvliK_pUTogfzMyrz57iDb_jSQR8/view?usp=sharing)
 - For training and evalutation run all commands inside code folder.
 - Training: ```python train.py --num_points 1024 --checkpoint_path .. --batch_size 20 --epochs 400 --h5_data_file dataset_path``` e.g., ```python train.py --num_points 1024 --checkpoint_path .. --batch_size 20 --epochs 400 --h5_data_file ../data.h5```
 - Evaluation: ```python evaluate.py --test_file filename(.xyz) --num_points num (default=1024) --patch_num_ratio num (default=4) --trained_model checkpoint_path``` e.g., ```python evaluate.py --test_file ../test.xyz --num_points 1024 --patch_num_ratio 4 --trained_model ../checkpoint```
